@@ -11,6 +11,14 @@
   </head>
 
   <body>
+    <nav>
+  <ul>
+    <li><%= link_to "Home", root_path %></li>
+    <!-- Add a link to the splash screen -->
+    <li><%= link_to "Splash", splash_path %></li>
+    <!-- Other navigation links -->
+  </ul>
+</nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

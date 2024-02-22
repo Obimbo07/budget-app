@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '68a3aa46ca14c05bc9bb2d8919f7674d47b783675849347060c94c15f6d98adfd7988adb30f5fb2e02ccef33e7ba4cd84075caf203df2b0d244014828c619125'
+  # config.secret_key = '1278942ec95db728b6e43caa87f17fdc85d31344b9624316ef5464f7a36f956ce7d6dd2d9bbc3473d663aae1644856dcc74363b0aef9921afdf24f372f913fae'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -24,7 +24,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'obimboausts@gmail.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'ddc4b226d3bbb6568e69605155d6bee0bb9ed98f97f8840eb0803988372bd1e46da7a3f1fe9e09a4bc5e51b22af610688b1174f2c4eea1f5eee6abb96dfcdec4'
+  # config.pepper = 'e67b6559ef828ef83fe8583f749dadb0aaf003756a5bb73b097c217c82cc40137aaad451f58728adff2e5f85ea60b5c88b97bdbdb16eae3165554439808e3a72'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -143,7 +143,7 @@ Devise.setup do |config|
   # without confirming their account.
   # Default is 0.days, meaning the user cannot access the website without
   # confirming their account.
-  # config.allow_unconfirmed_access_for = 2.days
+  config.allow_unconfirmed_access_for = 2.days
 
   # A period that the user is allowed to confirm their account before their
   # token becomes invalid. For example, if set to 3.days, the user can confirm
@@ -151,7 +151,7 @@ Devise.setup do |config|
   # their account can't be confirmed with the token any more.
   # Default is nil, meaning there is no restriction on how long a user can take
   # before confirming their account.
-  # config.confirm_within = 3.days
+  config.confirm_within = 3.days
 
   # If true, requires any email changes to be confirmed (exactly the same way as
   # initial account confirmation) to be applied. Requires additional unconfirmed_email

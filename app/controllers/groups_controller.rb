@@ -3,11 +3,14 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
-    @groups = Group.all
+    @groups = current_user.groups
   end
 
   # GET /groups/1 or /groups/1.json
-  def show; end
+  def show
+    @items = @group.items
+    @current_date = @items.first.created_at.strftime("%d %m %Y") if @items.any?
+  end
 
   # GET /groups/new
   def new
@@ -59,7 +62,7 @@ class GroupsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_group
-    @group = Group.find(params[:id])
+    @group = current_user.groups.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.

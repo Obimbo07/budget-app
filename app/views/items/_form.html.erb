@@ -21,9 +21,12 @@
     <%= form.number_field :amount %>
   </div>
 
-    <%= form.hidden_field :authors_id, value: current_user.id %>
-  
-   <%= form.hidden_field :group_id, value: @group.id %>  
+  <div>
+    <%= form.label :group_id, style: "display: block" %>
+    <%= form.collection_select :group_id, Group.all, :id, :name, { prompt: "Select a group" } %>
+  </div>
+
+  <%= form.hidden_field :authors_id, value: current_user.id %>
 
   <div>
     <%= form.submit %>

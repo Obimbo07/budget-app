@@ -21,15 +21,9 @@
     <%= form.number_field :amount %>
   </div>
 
-  <div>
-    <%= form.label :authors_id, style: "display: block" %>
-    <%= form.text_field :authors_id %>
-  </div>
-
-  <div>
-    <%= form.label :group_id, style: "display: block" %>
-    <%= form.text_field :group_id %>
-  </div>
+    <%= form.hidden_field :authors_id, value: current_user.id %>
+  
+   <%= form.hidden_field :group_id, value: @group.id %>  
 
   <div>
     <%= form.submit %>

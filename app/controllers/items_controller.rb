@@ -3,7 +3,8 @@ class ItemsController < ApplicationController
 
   # GET /items or /items.json
   def index
-    @items = Item.all
+    @items = current_user.items
+
   end
 
   # GET /items/1 or /items/1.json
@@ -11,7 +12,8 @@ class ItemsController < ApplicationController
 
   # GET /items/new
   def new
-    @item = Item.new
+    @group = Group.find(params[:group_id])
+    @item = @group.items.build
   end
 
   # GET /items/1/edit
@@ -61,6 +63,8 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
+
+
 
   # Only allow a list of trusted parameters through.
   def item_params

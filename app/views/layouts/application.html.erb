@@ -11,12 +11,16 @@
   </head>
 
   <body>
-    <header>
-      <%= render 'shared/header' %>
-    </header>
-
+    <% if flash[:notice].present? || flash[:alerts].present? %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <% end %>
+    <header>
+      <% if user_signed_in? %>
+       <%= render 'shared/header' %>
+      <% end %>
+
+    </header>
     <%= yield %>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>

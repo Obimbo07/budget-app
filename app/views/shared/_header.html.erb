@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- Font Awesome CSS for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>BudgetApp</title>
+  <style>
+    /* Custom CSS for sidebar */
+    .sidebar {
+      position: absolute;
+      top: 0;
+      left: -250px; /* Initially hide the sidebar */
+      width: 250px;
+      height: 100vh;
+      background-color: #343a40; /* Bootstrap dark background color */
+      transition: left 0.3s ease; /* Smooth transition for opening and closing */
+      padding-top: 60px; /* Adjusted for space for profile image and close button */
+    }
+    .sidebar.open {
+      left: 0; /* Open the sidebar */
+    }
+    .profile-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #fff; /* Default background color */
+      margin-left: 20px; /* Adjusted for space from the left */
+    }
+    .close-btn {
+      color: #fff; /* Button text color */
+      position: absolute;
+      top: 20px; /* Adjusted for space from the top */
+      right: 20px; /* Adjusted for space from the right */
+      cursor: pointer; /* Change cursor to pointer on hover */
+    }
+    .navbar-custom {
+      background-color: #3778c2;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+  <div class="container-fluid">
+    <!-- Hamburger Button for Sidebar Navigation -->
+    <button class="navbar-toggler" type="button" id="sidebarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Brand Logo -->
+    <h1 class="navbar-brand ">
+      <%= link_to 'BudgetApp', root_path, class: "text-white" %>
+      </h1>
+    
+    
+    <!-- Sidebar Navigation -->
+    <div class="sidebar navbar-custom" id="sidebar">
+      <!-- Close button for sidebar -->
+      <span class="close-btn" id="sidebarClose">&times;</span>
+      <!-- Add your sidebar content here -->
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <%# <img src="<%=  || asset_path('')" alt="Profile Image" class="profile-img"> %>
+          <a class="nav-link" href="#">
+            <i class="fas fa-user"></i> <!-- Account icon -->
+            My Account
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-th-list"></i> <!-- Categories icon -->
+            Categories
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fas fa-shopping-cart"></i> <!-- Items icon -->
+            Items
+          </a>
+        </li>
+        <li class="nav-item">
+<%= link_to "Logout", destroy_user_session_path, class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
+    <i class="fas fa-search text-white"></i>
+
+  </div>
+</nav>
+
+<!-- Bootstrap JS and jQuery (required for sidebar toggling) -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<!-- Font Awesome JS for icons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+<script>
+  // Toggle sidebar when hamburger button is clicked
+  $(document).ready(function(){
+    $('#sidebarCollapse').on('click', function(){
+      $('#sidebar').toggleClass('open');
+    });
+    // Close sidebar when close button is clicked
+    $('#sidebarClose').on('click', function(){
+      $('#sidebar').removeClass('open');
+    });
+  });
+</script>
+
+</body>
+</html>

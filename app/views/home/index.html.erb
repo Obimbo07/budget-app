@@ -1,2 +1,18 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1>Plan Me</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 offset-md-3 text-center">
+      <img src="<%= asset_path('splash.gif') %>" alt="Splash Image" class="img-fluid">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 d-flex flex-column text-center mt-3">
+      <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
+      <%= link_to "Log In", new_user_session_path, class: "btn btn-white text-muted" %>
+    </div>
+  </div>
+</div>

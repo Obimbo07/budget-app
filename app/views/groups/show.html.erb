@@ -1,10 +1,29 @@
-<p style="color: green"><%= notice %></p>
+<%# <p style="color: green"><%= notice</p> %>
 
 <%= render @group %>
 
+ <div class="p-2" id="groups">
+    <% @group.items.each do |item| %>
+      <div class="card mb-2 d-flex flex-row justify-content-around">
+        <h2 class=""><%= @group.icon %></h2>
+        <div>
+        <h3 class="text-secondary"><%= item.name %></h3>
+        <h6 class="text-secondary"><%= @current_date %></h6>
+        <h2>
+        </div>
+        <h3 class="p-2">$<%= item.amount %></h3>
+      </div>
+    <% end %>
+  </div>
+  <div class="fixed-bottom d-flex">
+    <div class="w-100">
+    <%= link_to "New Transaction", new_group_item_path(@group), style: "background-color: #3778c2", class: "text-white btn btn-block" %>
+  </div>
+
+<%# 
 <div>
   <%= link_to "Edit this group", edit_group_path(@group) %> |
-  <%= link_to "Back to groups", groups_path %>
+  <%# <%= link_to "Back to groups", groups_path %>
 
-  <%= button_to "Destroy this group", @group, method: :delete %>
-</div>
+  <%# <%= button_to "Destroy this group", @group, method: :delete %> 
+<%# </div> %>

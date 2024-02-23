@@ -1,14 +1,30 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Groups</h1>
+<div class="container-fluid">
+  <div class="p-2" id="groups">
+    <% @groups.each do |group| %>
+     <%= link_to group_path(group), class: "card-link" do%>
+      <div class="card position-static d-flex flex-row justfiy-content-space-around ">
+        <span class="p-2"><%= group.icon %></span>
+        <span class="p-2"><%= group.name %></span>
+        <span class="p-2">Totals: $<%= group.total_amount %></span>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
 
-<div class="card p-2" id="groups">
-  <% @groups.each do |group| %>
-    <%= render group %>
-    <p>
-      <%= link_to "Show this group", group %>
-    </p>
-  <% end %>
+
+  <div class="fixed-bottom d-flex">
+    <div class="w-100">
+    <%= link_to "New Category", new_group_path, style: "background-color: #3778c2", class: "text-white btn btn-block" %>
+  </div>
 </div>
 
-<%= link_to "New group", new_group_path %>
+
+
+
+
+<%# <%= render group %>
+    <%# <p>
+      <%= link_to "Show this group", group %>
+    <%# </p> %>

@@ -4,7 +4,6 @@ class ItemsController < ApplicationController
   # GET /items or /items.json
   def index
     @items = current_user.items
-
   end
 
   # GET /items/1 or /items/1.json
@@ -63,8 +62,6 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
-
-
 
   # Only allow a list of trusted parameters through.
   def item_params

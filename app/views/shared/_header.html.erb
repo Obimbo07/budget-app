@@ -36,11 +36,14 @@
       right: 20px; /* Adjusted for space from the right */
       cursor: pointer; /* Change cursor to pointer on hover */
     }
+    .navbar-custom {
+      background-color: #3778c2;
+    }
   </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
   <div class="container-fluid">
     <!-- Hamburger Button for Sidebar Navigation -->
     <button class="navbar-toggler" type="button" id="sidebarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +57,7 @@
     
     
     <!-- Sidebar Navigation -->
-    <div class="sidebar bg-primary" id="sidebar">
+    <div class="sidebar navbar-custom" id="sidebar">
       <!-- Close button for sidebar -->
       <span class="close-btn" id="sidebarClose">&times;</span>
       <!-- Add your sidebar content here -->

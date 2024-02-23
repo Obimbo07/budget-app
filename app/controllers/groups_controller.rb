@@ -9,7 +9,7 @@ class GroupsController < ApplicationController
   # GET /groups/1 or /groups/1.json
   def show
     @items = @group.items
-    @current_date = @items.first.created_at.strftime("%d %m %Y") if @items.any?
+    @current_date = @items.first.created_at.strftime('%d %m %Y') if @items.any?
   end
 
   # GET /groups/new

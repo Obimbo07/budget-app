@@ -24,7 +24,6 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run Tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔮 Improvements](#improvements)
 - [🤝 Future Features](#future-features)
@@ -171,7 +170,7 @@ To run tests, execute the following command:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## 🤝 Future Features <a name="Future-features"></a>
+## 🤝 Future Features <a name="future-features"></a>
 
 Contributions, issues, and feature requests are welcome!
 
@@ -194,12 +193,12 @@ If you like this project please show support by staring ⭐️.
 
 I would like to thank:
 
- Gregoire Vella on Behance for the design pattern
- Microverse and all the staff
- Microverse Communinity
- Thanks to my coding Partners
- Thanks to my Morning-Session-Group and Standup-Team Partners and
- Thanks to Code Reviewers
+- Gregoire Vella on Behance for the design pattern
+- Microverse and all the staff
+- Microverse Community
+- Thanks to my coding Partners
+- Thanks to my Morning-Session-Group and Standup-Team Partners and
+- Thanks to Code Reviewers
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

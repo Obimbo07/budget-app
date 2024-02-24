@@ -6,6 +6,9 @@
     "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "^3.21.0"
   },
+  "scripts": {
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets"
+  },
   "browserslist": [
     "defaults"
   ],

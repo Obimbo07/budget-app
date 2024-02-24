@@ -15,8 +15,6 @@ RSpec.feature 'Group management', type: :feature do
 
     visit groups_path(group)
 
-
-
     visit group_path(group)
 
     expect(page).to have_content('Cars')

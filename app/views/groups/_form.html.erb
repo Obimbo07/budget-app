@@ -1,6 +1,6 @@
-<%= form_with(model: group) do |form| %>
+<%= form_with(model: group, class: "needs-validation", novalidate: true) do |form| %>
   <% if group.errors.any? %>
-    <div style="color: red">
+    <div class="alert alert-danger">
       <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
 
       <ul>
@@ -11,19 +11,20 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control", required: true %>
+    <div class="invalid-feedback">Please provide a name for the group.</div>
   </div>
 
-  <div>
-    <%= form.label :icon, style: "display: block" %>
-    <%= form.text_field :icon %>
+  <div class="form-group">
+    <%= form.label :icon, class: "form-label" %>
+    <%= form.text_field :icon, class: "form-control" %>
   </div>
 
-    <%= form.hidden_field :user_id, value: current_user.id %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit "Save", class: "btn btn-primary" %>
   </div>
 <% end %>

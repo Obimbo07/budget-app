@@ -77,3 +77,5 @@ gem 'jsbundling-rails', '~> 1.3'
 gem 'sassc', '~> 2.4'
 
 gem 'bootstrap-icons', '~> 1.0'
+
+gem 'rspec-rails', '~> 6.1.1'

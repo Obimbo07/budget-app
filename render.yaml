@@ -1,4 +1,4 @@
-atabases:
+databases:
   - name: budget_app
     databaseName: budget_app
     user: pam

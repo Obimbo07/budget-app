@@ -1,22 +1,23 @@
-databases:
-  - name: budget-app
-    databaseName: budget_app_development
+atabases:
+  - name: budget_app
+    databaseName: budget_app
+    user: pam
     plan: free
 
 services:
   - type: web
-    name: budget-app
+    name: budget_app
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
     # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
     startCommand: "bundle exec rails server"
     envVars:
-      - key: postgres://budget_app_development_coeu_user:LLmhaIxifxwiZwd11S6Z2Fz2CO40ph1p@dpg-cnckm86n7f5s73bhb0d0-a/budget_app_development_coeu
+      - key: DATABASE_URL
         fromDatabase:
-          name: budget-app
+          name: budget_app
           property: connectionString
-      - key: 1ac28ddac4370b6848b56e0f29d3c665
+      - key: RAILS_MASTER_KEY
         sync: false
       - key: WEB_CONCURRENCY
-        value: 2
+        value: 2 # sensible default

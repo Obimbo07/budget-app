@@ -1,6 +1,6 @@
 databases:
   - name: budget-app
-    databaseName: budget_app_development
+    databaseName: budget_app
     plan: free
 
 services:
@@ -12,11 +12,8 @@ services:
     # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
     startCommand: "bundle exec rails server"
     envVars:
-      - key: postgres://budget_app_development_coeu_user:LLmhaIxifxwiZwd11S6Z2Fz2CO40ph1p@dpg-cnckm86n7f5s73bhb0d0-a/budget_app_development_coeu
         fromDatabase:
           name: budget-app
           property: connectionString
-      - key: 49e6d48c7a6551751d8004720a39261c
         sync: false
-      - key: WEB_CONCURRENCY
         value: 2

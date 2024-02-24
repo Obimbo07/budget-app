@@ -1,12 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Items</h1>
+<h1>Transactions</h1>
 
 <div id="items">
   <% @items.each do |item| %>
     <%= render item %>
     <p>
-      <%= link_to  "Show this item",  group_item_path(item.group,) %>
     </p>
   <% end %>
 </div>

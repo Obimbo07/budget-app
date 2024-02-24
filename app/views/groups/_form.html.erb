@@ -19,7 +19,7 @@
 
   <div class="form-group">
     <%= form.label :icon, class: "form-label" %>
-    <%= form.text_field :icon, class: "form-control" %>
+    <%= form.text_field :icon, placeholder: 'Add Emoji icon', class: "form-control" %>
   </div>
 
   <%= form.hidden_field :user_id, value: current_user.id %>

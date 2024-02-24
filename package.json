@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "postcss": "^8.4.35",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^1.9.0",
@@ -7,9 +8,9 @@
   },
   "scripts": {
     "build:css:compile": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
-    "build:css:prefix": "postcss ./app/assets/builds/application.css --use=autoprefixer --output=./app/assets/builds/application.css",
+    "build:css:prefix": "postcss ./app/assets/builds/application.css --use autoprefixer -o ./app/assets/builds/application.css",
     "build:css": "npm run build:css:compile && npm run build:css:prefix",
-    "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext scss --exec \"yarn build:css\"",
+    "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext scss --exec \"npm run build:css\"",
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets"
   },
   "browserslist": [

@@ -73,7 +73,9 @@ Budget App is a web application where you can manage your budget: you have a lis
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-Start Budgeting!! [Not live yet](#).
+Start Budgeting!! [Live demo](https://budget-app-m9id.onrender.com/).
+
+Here is my live presentation. [Live Presentation](https://drive.google.com/file/d/1aInYpdxstl__zIR10I3LR2UBQA1fU3XH/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

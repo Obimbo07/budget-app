@@ -1,0 +1,13 @@
+<div style="background-color: #3778c2;" class="p-2 d-flex flex-row justify-content-around text-white" id="<%= dom_id group %>">
+  <a href="<%= groups_path %>">
+      <i class="fas fa-arrow-left fa-lg text-white"></i>
+    </a>
+  <span>
+    <strong>Category: </strong>
+    <%= group.name %>
+  </span>
+  <span>
+    <strong>Totals: </strong>
+    <%= group.total_amount %>
+  </span>
+</div>

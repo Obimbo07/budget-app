@@ -1,0 +1,37 @@
+<%= form_with(model: item, url: group_items_path, method: "POST", class: "needs-validation", novalidate: true) do |form| %>
+  <% if item.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+        <% item.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control", required: true %>
+    <div class="invalid-feedback">Please provide a name for the item.</div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :amount, class: "form-label" %>
+    <%= form.number_field :amount, class: "form-control", required: true %>
+    <div class="invalid-feedback">Please provide an amount for the item.</div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :group_id, class: "form-label" %>
+    <%= form.collection_select :group_id, Group.all, :id, :name, { prompt: "Select a group" }, class: "form-control", required: true %>
+    <div class="invalid-feedback">Please select a group.</div>
+  </div>
+
+  <%= form.hidden_field :authors_id, value: current_user.id %>
+
+  <div class="form-group">
+    <%= form.submit "Save", class: "btn btn-primary" %>
+  </div>
+<% end %>
